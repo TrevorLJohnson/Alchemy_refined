@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Alchemy</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+  <script src="main.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Alchemy</h1>
+
+    <div id="chatbox">
+      <!-- Chat bubbles will go here -->
+      <div
+        id="chat-history"
+        style="display:flex; flex-direction:column; gap:0.5rem;"
+      ></div>
+    </div>
+
+    <div id="input-area">
+      <input type="text" id="user-input" placeholder="Ask a question..." />
+      <button id="send-btn">➤</button>
+    </div>
+
+    <div class="summary-section">
+      <div class="card">
+        <h2>Category Summary</h2>
+        <!-- Historical category entries -->
+        <div
+          id="category-sections"
+          style="overflow:auto; max-height:300px; padding-top:0.5rem;"
+        ></div>
+      </div>
+      <div class="card">
+        <h2>Real-Time Insight</h2>
+        <canvas id="pie-canvas" width="300" height="300"></canvas>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,17 @@
+{
+  "name": "alchemy-frontend",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "npx parcel index.html --port 3000",
+    "build": "npx parcel build index.html"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "recharts": "^2.5.0"
+  },
+  "devDependencies": {
+    "parcel": "^2.9.3"
+  },
+  "proxy": "http://localhost:5000"
+}
