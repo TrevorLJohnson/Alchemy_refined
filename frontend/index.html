@@ -5,37 +5,63 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Alchemy</title>
   <link rel="stylesheet" href="styles.css" />
+
+  <!-- Chart.js and Datalabels plugin -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2" defer></script>
   <script src="main.js" defer></script>
 </head>
 <body>
   <div class="container">
-    <h1>Alchemy</h1>
-
-    <div id="chatbox">
-      <!-- Chat bubbles will go here -->
-      <div
-        id="chat-history"
-        style="display:flex; flex-direction:column; gap:0.5rem;"
-      ></div>
+    <!-- App header + New Chat button -->
+    <div class="flex items-center justify-between mb-4">
+      <h1 class="text-3xl font-bold text-purple-400">Alchemy</h1>
+      <button
+        id="new-conversation-btn"
+        class="px-4 py-2 bg-gray-700 hover:bg-gray-600 rounded"
+      >
+        + New Chat
+      </button>
     </div>
 
-    <div id="input-area">
-      <input type="text" id="user-input" placeholder="Ask a question..." />
-      <button id="send-btn">➤</button>
+    <!-- Dynamic conversation title -->
+    <h2 id="conversation-title" class="text-xl text-purple-300 mb-6">
+      New Conversation
+    </h2>
+
+    <!-- Chat bubbles -->
+    <div id="chatbox" class="mb-6">
+      <div id="chat-history" class="flex flex-col gap-2"></div>
     </div>
 
-    <div class="summary-section">
-      <div class="card">
-        <h2>Category Summary</h2>
-        <!-- Historical category entries -->
+    <!-- Input area -->
+    <div id="input-area" class="mb-8 flex gap-2">
+      <input
+        type="text"
+        id="user-input"
+        placeholder="Ask a question..."
+        class="flex-1 p-3 rounded bg-gray-800 text-white focus:outline-none"
+      />
+      <button
+        id="send-btn"
+        class="w-16 bg-purple-600 hover:bg-purple-700 rounded flex items-center justify-center"
+      >
+        ➤
+      </button>
+    </div>
+
+    <!-- Summary & Insight -->
+    <div class="summary-section flex gap-6">
+      <div class="card flex-1 p-4 bg-gray-800 rounded">
+        <h3 class="text-lg font-semibold text-white mb-2">Category Summary</h3>
         <div
           id="category-sections"
-          style="overflow:auto; max-height:300px; padding-top:0.5rem;"
+          class="overflow-auto"
+          style="max-height:300px;"
         ></div>
       </div>
-      <div class="card">
-        <h2>Real-Time Insight</h2>
+      <div class="card w-80 p-4 bg-gray-800 rounded">
+        <h3 class="text-lg font-semibold text-white mb-2">Real-Time Insight</h3>
         <canvas id="pie-canvas" width="300" height="300"></canvas>
       </div>
     </div>
